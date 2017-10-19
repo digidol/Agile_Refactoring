@@ -36,15 +36,7 @@ public class TestCustomer {
 	public void shouldBeInitialisedWithSpecifiedName() { 
 		assertEquals("Incorrect Name", "Sam Jones", customer.getName()); 
 	}
-	
-	@Test 
-	public void shouldGenerateStatementForZeroItems() { 
-		String statement = "Invoice from AberMovies\n\nCustomer: Sam Jones\n\n\tNo items purchased or rented.\n" + 
-				  "Amount owed: 0.0\nYou earned 0 bonus points";
-		assertEquals("Incorrect statement", statement, customer.getStatement());
-	}
-	
-	
+		
 	@Test
 	public void shouldGenerateStatementForSDPurchase() { 
 		
