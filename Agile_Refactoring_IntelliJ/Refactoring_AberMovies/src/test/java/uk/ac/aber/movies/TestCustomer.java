@@ -1,10 +1,9 @@
-package uk.ac.aber.movies.tests;
+package uk.ac.aber.movies;
 
-import org.junit.Before;
-import org.junit.Test;
-import uk.ac.aber.movies.*;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestCustomer {
 
@@ -21,7 +20,7 @@ public class TestCustomer {
 	private Movie alienMovieHD = new Movie("Alien: Covenant", MovieVersion.HD); 
 	
 	
-	@Before 
+	@BeforeEach
 	public void setup() { 
 		// Reset the customer details before each of the tests cases run
 		customer = new Customer("Sam", "Jones"); 
@@ -29,7 +28,7 @@ public class TestCustomer {
 	
 	@Test 
 	public void shouldBeInitialisedWithSpecifiedName() { 
-		assertEquals("Incorrect Name", "Sam Jones", customer.getName()); 
+		assertEquals("Sam Jones", customer.getName(), "Incorrect Name");
 	}
 	
 	@Test
@@ -40,7 +39,7 @@ public class TestCustomer {
 		
 		String statement = "Invoice from AberMovies\n\nCustomer: Sam Jones\n\n\tBlade Runner\t5.99\n" + 
 		  "Amount owed: 5.99\nYou earned 1 bonus points";
-		assertEquals("Incorrect statement", statement, customer.getStatement()); 
+		assertEquals(statement, customer.getStatement());
 	}
 	
 	@Test
@@ -51,7 +50,7 @@ public class TestCustomer {
 		
 		String statement = "Invoice from AberMovies\n\nCustomer: Sam Jones\n\n\tWonder Woman\t9.99\n" + 
 		  "Amount owed: 9.99\nYou earned 2 bonus points";
-		assertEquals("Incorrect statement", statement, customer.getStatement()); 
+		assertEquals(statement, customer.getStatement());
 	}
 	
 	@Test
@@ -62,7 +61,7 @@ public class TestCustomer {
 		
 		String statement = "Invoice from AberMovies\n\nCustomer: Sam Jones\n\n\tBlade Runner\t3.0\n" + 
 		  "Amount owed: 3.0\nYou earned 1 bonus points";
-		assertEquals("Incorrect statement", statement, customer.getStatement()); 
+		assertEquals(statement, customer.getStatement());
 	}
 	
 	@Test
@@ -73,7 +72,7 @@ public class TestCustomer {
 		
 		String statement = "Invoice from AberMovies\n\nCustomer: Sam Jones\n\n\tWonder Woman\t4.49\n" + 
 		  "Amount owed: 4.49\nYou earned 1 bonus points";
-		assertEquals("Incorrect statement", statement, customer.getStatement()); 
+		assertEquals(statement, customer.getStatement());
 	}
 	
 	@Test
@@ -94,7 +93,7 @@ public class TestCustomer {
 		  "\tAlien: Covenant\t4.49\n" +
 		  "\tBlade Runner\t5.99\n" + 
 		  "Amount owed: 20.47\nYou earned 4 bonus points";
-		assertEquals("Incorrect statement", statement, customer.getStatement()); 
+		assertEquals(statement, customer.getStatement());
 	}
 	
 }

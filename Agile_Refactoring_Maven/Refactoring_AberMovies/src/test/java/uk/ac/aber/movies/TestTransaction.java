@@ -1,14 +1,13 @@
-package uk.ac.aber.movies.tests;
-
-import static org.junit.jupiter.api.Assertions.*;
+package uk.ac.aber.movies;
 
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-import uk.ac.aber.movies.Movie;
-import uk.ac.aber.movies.MovieVersion;
-import uk.ac.aber.movies.Transaction;
-import uk.ac.aber.movies.TransactionType;
-
+/**
+ * Tests for the Transaction class.
+ *
+ * @author Neil Taylor (nst@aber.ac.uk)
+ */
 public class TestTransaction {
 
 	@Test

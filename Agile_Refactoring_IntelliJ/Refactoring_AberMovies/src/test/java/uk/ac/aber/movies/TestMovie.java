@@ -1,11 +1,7 @@
-package uk.ac.aber.movies.tests;
+package uk.ac.aber.movies;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
-
-import uk.ac.aber.movies.Movie;
-import uk.ac.aber.movies.MovieVersion;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Tests for the Movie class.
@@ -20,8 +16,8 @@ public class TestMovie {
                 MovieVersion.HD);
 		
 		
-		assertEquals("Incorrect title", "Blade Runner (The Final Cut)", movie.getTitle());
-		assertEquals("Incorrect version", MovieVersion.HD, movie.getVersion());
+		assertEquals("Blade Runner (The Final Cut)", movie.getTitle(), "Incorrect title");
+		assertEquals(MovieVersion.HD, movie.getVersion(), "Incorrect version");
 	}
 	
 	@Test 
@@ -29,7 +25,7 @@ public class TestMovie {
 		Movie movie = new Movie("Blade Runner (The Final Cut)", 
 		        MovieVersion.HD);
 		movie.setTitle("Blade Runner 2049");
-		assertEquals("Incorrect title", "Blade Runner 2049", movie.getTitle()); 
+		assertEquals("Blade Runner 2049", movie.getTitle(), "Incorrect title");
 	}
 	
 	@Test 
@@ -37,7 +33,7 @@ public class TestMovie {
 		Movie movie = new Movie("Blade Runner (The Final Cut)", 
 	            MovieVersion.HD);
 		movie.setVersion(MovieVersion.SD);
-		assertEquals("Incorrect movie version", MovieVersion.SD, movie.getVersion()); 
+		assertEquals(MovieVersion.SD, movie.getVersion(), "Incorrect movie version");
 	}
 
 }
